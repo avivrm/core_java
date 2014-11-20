@@ -39,6 +39,7 @@ public class StringBasic {
 		else
 			System.out.println("not Equal 5");
 	}
+	
 }
 /*
  * Conversion

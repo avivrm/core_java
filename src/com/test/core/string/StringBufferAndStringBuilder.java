@@ -22,4 +22,5 @@ public class StringBufferAndStringBuilder {
 		else
 			System.out.println("not equal 1");
 	}
+	
 }
