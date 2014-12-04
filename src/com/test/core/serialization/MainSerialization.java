@@ -5,13 +5,19 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.io.Serializable;
 
 public class MainSerialization {
-
+/*
+ * case 1. Parent class is serialize then child class is automatically serialized
+ * case 2. If Child class is serialize and parent is not then it will throw error
+ * case 3. if any object field is used in class like Address in Serialization1 
+ * then it should be serialize or transient otherwise it will throw error.
+ * 
+ */
 	public static void main(String... strings) throws IOException,
 			ClassNotFoundException {
-		Serialization1 s1 = new Serialization1("freeqw", "fsfdasf");
+		Address address = new Address("address1", "address2", "address3");
+		Serialization2 s1 = new Serialization2("freeqw", 12, 1000);
 
 		FileOutputStream fout = new FileOutputStream("E:/f.txt", true);
 		ObjectOutputStream out = new ObjectOutputStream(fout);
@@ -22,78 +28,7 @@ public class MainSerialization {
 
 		ObjectInputStream in = new ObjectInputStream(new FileInputStream(
 				"E:/f.txt"));
-		Serialization1 s = (Serialization1) in.readObject();
-		System.out.println("Serialization 1 " + s.getAddress() + " "
-				+ s.getName() + " " /*+ /*s.getSerialization2()*/);
-	}
-}
-
-class Serialization1 extends Serialization2 {
-
-	private String name;
-	private String address;
-
-	// private Serialization2 serialization2;
-
-	Serialization1(String name, String address) {
-		super("freeqw", "fsfdasf");
-		this.name = name;
-		this.address = address;
-	}
-
-	/*public Serialization2 getSerialization2() {
-		return serialization2;
-	}
-
-	public void setSerialization2(Serialization2 serialization2) {
-		this.serialization2 = serialization2;
-	}*/
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-}
-
-class Serialization2 implements Serializable {
-
-	private String name1;
-	private String address1;
-
-	Serialization2(String name, String address) {
-		this.name1 = name;
-		this.address1 = address;
-
-	}
-
-	public String getName1() {
-		return name1;
-	}
-
-	public void setName1(String name1) {
-		this.name1 = name1;
-	}
-
-	public String getAddress1() {
-		return address1;
-	}
-
-	public void setAddress1(String address1) {
-		this.address1 = address1;
-	}
-
-	public String toString() {
-		return "\n Serialization 2 " + name1 + " " + address1;
+		Serialization2 s = (Serialization2) in.readObject();
+		System.out.println("Serialization1: "+s);
 	}
 }
