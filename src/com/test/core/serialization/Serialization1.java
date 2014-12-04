@@ -2,7 +2,7 @@ package com.test.core.serialization;
 
 import java.io.Serializable;
 
-public class Serialization1 {
+public class Serialization1 implements Serializable{
 
 	private String name;
 	private int age;
