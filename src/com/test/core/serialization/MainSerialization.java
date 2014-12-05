@@ -13,6 +13,8 @@ public class MainSerialization {
  * case 3. if any object field is used in class like Address in Serialization1 
  * then it should be serialize or transient otherwise it will throw error.
  * 
+ * follow link for serialVersionUID : http://www.jusfortechies.com/java/core-java/serialVersionUID.php
+ * 
  */
 	public static void main(String... strings) throws IOException,
 			ClassNotFoundException {
