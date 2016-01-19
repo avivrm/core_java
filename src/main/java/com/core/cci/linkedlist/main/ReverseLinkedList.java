@@ -1,4 +1,6 @@
-package com.core.cci.linkedlist;
+package com.core.cci.linkedlist.main;
+
+import com.core.cci.linkedlist.LinkedList;
 
 public class ReverseLinkedList {
 
