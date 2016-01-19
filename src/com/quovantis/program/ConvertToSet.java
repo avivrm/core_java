@@ -1,4 +1,4 @@
-package com.test.quovantis.program;
+package com.quovantis.program;
 
 import java.util.Arrays;
 import java.util.Collections;
