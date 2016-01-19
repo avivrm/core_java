@@ -1,4 +1,4 @@
-package com.core.cci.linkedlist.reverse;
+package com.core.cci.linkedlist;
 
 import org.junit.Assert;
 import org.junit.Test;
