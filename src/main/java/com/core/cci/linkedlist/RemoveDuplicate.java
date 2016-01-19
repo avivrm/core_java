@@ -18,7 +18,7 @@ public class RemoveDuplicate {
 		linkedListFloat.removeDuplicate();
 		linkedListFloat.displayLinkedList();
 		
-		String[] strValues = new String[]{"1", "2", "3", "1", "3", "4", "5"};
+		String[] strValues = new String[]{"1", "2", "3", "1", "3", "3", "4", "5", "3"};
 		LinkedList<String> linkedListString = new LinkedList<String>();
 		System.out.println("\n");
 		linkedListString.prepareLinkedList(strValues);

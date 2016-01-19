@@ -3,7 +3,106 @@ package com.core.cci.linkedlist;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.core.cci.linkedlist.Node;
+
 public class LinkedList<T> {
+	
+
+	
+	public LinkedList(T[] nodes) {
+		createList(nodes);
+	}
+	
+	public LinkedList() {}
+
+	@SuppressWarnings("unchecked")
+	private Node<T>[] getNodeList(T[] nodeList) {
+		Node<T>[] nodes = new Node[nodeList.length];
+		for(int i = 0; i < nodeList.length; i++) {
+			nodes[i] = new Node<T>(nodeList[i]);
+		}
+		return nodes;
+	}
+
+	public void createList(T[] nodeList) {
+		if(null == nodeList || nodeList.length == 0) {
+			System.out.println("creating EMPTY linked list.");
+			return;
+		}
+		Node<T>[] nodes = getNodeList(nodeList);
+		head = nodes[0];
+		Node<T> node = null;
+		for(int i = 1; i < nodes.length; i++) {
+			node = nodes[i-1];
+			node.setNext(nodes[i]);
+		}
+		Node<T> lastNode = node.getNext();
+		lastNode.setNext(null);
+	}
+	
+	public void reverse(int limit) {
+		head = (limit > 0) ? reverse(limit, head) : reverse(); 
+	}
+	
+	private Node<T> reverse(int limit, Node<T> head) {
+		if(null == head) {
+			return null;
+		}
+		Node<T> previous = null; 
+		Node<T> current = head;
+		Node<T> next = head.getNext();
+		int counter = 0;
+		while(null != current && counter++ < limit) {
+			current.setNext(previous);
+			previous = current;
+			current = next;
+			if(null != next) {
+				next = next.getNext();
+			}
+		}
+		head.setNext(reverse(limit, current));
+		return previous;
+	}
+	
+	public Node<T> reverse() {
+		if(null == head) {
+			return null;
+		}
+		Node<T> previous = null; 
+		Node<T> current = head;
+		Node<T> next = head.getNext();
+		while(null != current) {
+			current.setNext(previous);
+			previous = current;
+			current = next;
+			if(null != next) {
+				next = next.getNext();
+			}
+		}
+		head = previous;
+		return head;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder str = new StringBuilder();
+		if(null == head) {
+			return "EMPTY LIST.";
+		}
+		Node<T> node = head;
+		while(null != node) {
+			str.append(node.getData());
+			if(null != node.getNext()) {
+				str.append("->");
+			}
+			node = node.getNext();
+		}
+		return str.toString();
+	}
+
+	public void setHead(Node<T> head) {
+		this.head = head;
+	}
 
 	private Node<T> head;
 	
@@ -13,10 +112,10 @@ public class LinkedList<T> {
 		Node<T> temp = head;
 		List<T> unqiueValues = new ArrayList<T>();
 		while(null != temp) {
-			if(!unqiueValues.contains(temp.getValue())) {
-				unqiueValues.add(temp.getValue());
+			if(!unqiueValues.contains(temp.getData())) {
+				unqiueValues.add(temp.getData());
 			}
-			temp = temp.getNextNode();
+			temp = temp.getNext();
 		}
 		prepareLinkedList(unqiueValues);
 	}
@@ -30,7 +129,7 @@ public class LinkedList<T> {
 			Node<T> temp = head;
 			for(int i = 1; i < values.length; i++) {
 				Node<T> node = new Node<T>(((T)values[i]), null);
-				temp.setNextNode(node);
+				temp.setNext(node);
 				temp = node;
 			}
 		}
@@ -41,7 +140,7 @@ public class LinkedList<T> {
 		return prepareLinkedList(((T[])values.toArray()));
 	}
 	
-	public Node<T> prepareLinkedList(Integer value) {
+	public Node<T> prepareLinkedListFromNumber(Integer value) {
 		Integer digit = 0;
 		Node<T> temp = head;
 		Node<T> next;
@@ -53,8 +152,8 @@ public class LinkedList<T> {
 				temp = head;
 			} else {
 				next = (Node<T>) new Node<Integer>(digit, null);
-				temp.setNextNode(next);
-				temp = temp.getNextNode();
+				temp.setNext(next);
+				temp = temp.getNext();
 			}
 		}
 		return head;
@@ -69,8 +168,8 @@ public class LinkedList<T> {
 		Node<T> temp = head;
 		int multiplicationFactor = 1;
 		while(null != temp) {
-			value = ((Integer)temp.getValue() * multiplicationFactor) + value;
-			temp = temp.getNextNode();
+			value = ((Integer)temp.getData() * multiplicationFactor) + value;
+			temp = temp.getNext();
 			multiplicationFactor *= 10;
 		}
 		return value;
@@ -83,11 +182,11 @@ public class LinkedList<T> {
 		System.out.println("\n");
 		Node<T> temp = head;
 		while(null != temp) {
-			System.out.print(temp.getValue());
-			if(null != temp.getNextNode()) {
+			System.out.print(temp.getData());
+			if(null != temp.getNext()) {
 				System.out.print(" --> ");
 			}
-			temp = temp.getNextNode();
+			temp = temp.getNext();
 		}
 	}
 
