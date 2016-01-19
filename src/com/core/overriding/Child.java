@@ -6,6 +6,12 @@ public class Child extends Base {
 	
 	String s ="abc";
 	
+	String b="df";
+	
+	protected void childMethod(){
+		System.out.println("In a child method");
+	}
+	
 	public void test(){
 		System.out.println("In child class");
 	}

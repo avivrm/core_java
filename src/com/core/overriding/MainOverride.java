@@ -5,5 +5,9 @@ public class MainOverride {
 		Child c = new Child();
 		c.test();
 		System.out.println(c.s);
+		
+		Base b = new Child();
+		b.baseMethod();
+		b.test();
 	}
 }
