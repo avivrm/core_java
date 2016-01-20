@@ -36,7 +36,7 @@ public class LinkedList<T> {
 			node = nodes[i-1];
 			node.setNext(nodes[i]);
 		}
-		Node<T> lastNode = node.getNext();
+		Node<T> lastNode = node.next();
 		lastNode.setNext(null);
 	}
 	
@@ -50,14 +50,14 @@ public class LinkedList<T> {
 		}
 		Node<T> previous = null; 
 		Node<T> current = head;
-		Node<T> next = head.getNext();
+		Node<T> next = head.next();
 		int counter = 0;
 		while(null != current && counter++ < limit) {
 			current.setNext(previous);
 			previous = current;
 			current = next;
 			if(null != next) {
-				next = next.getNext();
+				next = next.next();
 			}
 		}
 		head.setNext(reverse(limit, current));
@@ -70,13 +70,13 @@ public class LinkedList<T> {
 		}
 		Node<T> previous = null; 
 		Node<T> current = head;
-		Node<T> next = head.getNext();
+		Node<T> next = head.next();
 		while(null != current) {
 			current.setNext(previous);
 			previous = current;
 			current = next;
 			if(null != next) {
-				next = next.getNext();
+				next = next.next();
 			}
 		}
 		head = previous;
@@ -92,10 +92,10 @@ public class LinkedList<T> {
 		Node<T> node = head;
 		while(null != node) {
 			str.append(node.getData());
-			if(null != node.getNext()) {
+			if(null != node.next()) {
 				str.append("->");
 			}
-			node = node.getNext();
+			node = node.next();
 		}
 		return str.toString();
 	}
@@ -115,7 +115,7 @@ public class LinkedList<T> {
 			if(!unqiueValues.contains(temp.getData())) {
 				unqiueValues.add(temp.getData());
 			}
-			temp = temp.getNext();
+			temp = temp.next();
 		}
 		prepareLinkedList(unqiueValues);
 	}
@@ -153,7 +153,7 @@ public class LinkedList<T> {
 			} else {
 				next = (Node<T>) new Node<Integer>(digit, null);
 				temp.setNext(next);
-				temp = temp.getNext();
+				temp = temp.next();
 			}
 		}
 		return head;
@@ -169,7 +169,7 @@ public class LinkedList<T> {
 		int multiplicationFactor = 1;
 		while(null != temp) {
 			value = ((Integer)temp.getData() * multiplicationFactor) + value;
-			temp = temp.getNext();
+			temp = temp.next();
 			multiplicationFactor *= 10;
 		}
 		return value;
@@ -183,10 +183,10 @@ public class LinkedList<T> {
 		Node<T> temp = head;
 		while(null != temp) {
 			System.out.print(temp.getData());
-			if(null != temp.getNext()) {
+			if(null != temp.next()) {
 				System.out.print(" --> ");
 			}
-			temp = temp.getNext();
+			temp = temp.next();
 		}
 	}
 
@@ -208,5 +208,24 @@ public class LinkedList<T> {
 		return length;
 	}*/
 
+	public boolean checkLoop() {
+		if(null == head || null == head.next()) {
+			return false;
+		}
+		Node<T> temp1 = head;
+		Node<T> temp2 = temp1;
+		while(null != temp1) {
+			if(null == temp2.next() || null == temp2.next().next()) {
+				return false;
+			} else {
+				temp2 = temp2.next().next();
+			}
+			if(temp2.getData().equals(temp1.getData())) {
+				return true;
+			}
+			temp1 = temp1.next();
+		}
+		return false;
+	}
 }
 
