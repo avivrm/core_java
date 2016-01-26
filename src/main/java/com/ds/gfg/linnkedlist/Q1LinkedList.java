@@ -1,27 +1,25 @@
-package com.ds.cci.linnkedlist;
+package com.ds.gfg.linnkedlist;
 
-public class LinkedList {
+public class Q1LinkedList {
 	
-	private Node head;
+	private Q1Node head;
 	private int size;
 	
 	static String seprator = " --> ";
 
-	LinkedList(){
+	Q1LinkedList(){
 		// No Initialization
 	}
 	
 	public void createLinkedList(int[] arr){
 		int counter = 0;
-		//Node temp = null;
 		while(counter < arr.length){
-			Node newNode = new Node();
+			Q1Node newNode = new Q1Node();
 			newNode.setVal(arr[counter]);
 			if(head == null){
 				head = newNode;
-				//temp = head;
 			}else{
-				Node node = head;
+				Q1Node node = head;
 				for(int i=0 ;i<counter;i++){
 						if(i == counter-1){
 							node.setNext(newNode);
@@ -36,10 +34,10 @@ public class LinkedList {
 	}
 	
 	public void reverse(){
-		Node node = head;
-		Node temp = null;
+		Q1Node node = head;
+		Q1Node temp = null;
 		for(int i=0;i<size;i++){
-			Node newNode = node;
+			Q1Node newNode = node;
 			node = node.getNext();
 			newNode.setNext(temp);
 			temp = newNode;		
@@ -47,11 +45,11 @@ public class LinkedList {
 		head = temp;
 	}
 	
-	public Node reverse(Node node,int counter){
-		Node current = node;
-		Node temp = null;
+	public Q1Node reverse(Q1Node node,int counter){
+		Q1Node current = node;
+		Q1Node temp = null;
 		for(int count=0;count < counter && current != null ;count++){
-			Node newNode = current;
+			Q1Node newNode = current;
 			current = current.getNext();
 			newNode.setNext(temp);
 			temp = newNode;
@@ -64,10 +62,10 @@ public class LinkedList {
 	}
 	
 	public String toString(){
-		Node node = head;
+		Q1Node node = head;
 		StringBuilder str = new StringBuilder();
 		while(node.getNext() != null){
-			str.append(node.getVal() + LinkedList.seprator);
+			str.append(node.getVal() + Q1LinkedList.seprator);
 			node = node.getNext();
 		}
 		str.append(node.getVal());
@@ -75,11 +73,11 @@ public class LinkedList {
 		
 	}
 
-	public Node getHead() {
+	public Q1Node getHead() {
 		return head;
 	}
 
-	public void setHead(Node head) {
+	public void setHead(Q1Node head) {
 		this.head = head;
 	}
 

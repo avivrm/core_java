@@ -1,15 +1,15 @@
-package com.ds.cci.linnkedlist;
+package com.ds.gfg.linnkedlist;
 
-public class Node {
+public class Q1Node {
 	private int val;
-	private Node next;
+	private Q1Node next;
 
-	public Node() {
+	public Q1Node() {
 		val = 0;
 		next = null;
 	}
 
-	public Node(int v, Node n) {
+	public Q1Node(int v, Q1Node n) {
 		val = v;
 		next = n;
 	}
@@ -22,11 +22,11 @@ public class Node {
 		this.val = val;
 	}
 
-	public Node getNext() {
+	public Q1Node getNext() {
 		return next;
 	}
 
-	public void setNext(Node next) {
+	public void setNext(Q1Node next) {
 		this.next = next;
 	}
 
