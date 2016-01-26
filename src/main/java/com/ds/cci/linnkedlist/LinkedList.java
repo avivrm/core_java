@@ -47,6 +47,22 @@ public class LinkedList {
 		head = temp;
 	}
 	
+	public Node reverse(Node node,int counter){
+		Node current = node;
+		Node temp = null;
+		for(int count=0;count < counter && current != null ;count++){
+			Node newNode = current;
+			current = current.getNext();
+			newNode.setNext(temp);
+			temp = newNode;
+		}
+		
+		if(current != null){
+			node.setNext(reverse(current,counter));
+		}
+		return temp;
+	}
+	
 	public String toString(){
 		Node node = head;
 		StringBuilder str = new StringBuilder();
@@ -58,4 +74,22 @@ public class LinkedList {
 		return str.toString();
 		
 	}
+
+	public Node getHead() {
+		return head;
+	}
+
+	public void setHead(Node head) {
+		this.head = head;
+	}
+
+	public int getSize() {
+		return size;
+	}
+
+	public void setSize(int size) {
+		this.size = size;
+	}
+	
+	
 }
