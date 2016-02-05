@@ -29,6 +29,9 @@ public class Q3LinkedList {
 			{
 				char char1= node1.getAlphabet();
 				char char2= node2.getAlphabet();
+				
+				//sum	= sum + (char1>char2?1:-1);
+				
 				int ascii1 = (int) char1;
 				int ascii2 = (int) char2;
 				sum = sum + (ascii1-ascii2);
