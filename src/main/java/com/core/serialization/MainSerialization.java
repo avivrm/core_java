@@ -11,8 +11,8 @@ public class MainSerialization {
 	 * case 1. Parent class is serialize then child class is automatically
 	 * serialized case 2. If Child class is serialize and parent is not then it
 	 * will throw error case 3. if any object field is used in class like
-	 * Address in Serialization1 then it should be serialize or transient
-	 * otherwise it will throw error.
+	 * Address in Serialization1 then it will not save into file/disk
+	 * and in de-serialization it will become null
 	 * 
 	 * follow link for serialVersionUID :
 	 * http://www.jusfortechies.com/java/core-java/serialVersionUID.php
