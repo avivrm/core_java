@@ -5,6 +5,12 @@ import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
+/*
+ * Other questions on srialization
+ * 
+ * http://www.javamadesoeasy.com/2015/02/serialization-top-25-interview.html
+ */
+
 public class MainExternalization {
 
 	public static void main(String... args) {// create a Car object 

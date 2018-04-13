@@ -30,7 +30,7 @@ class Producer implements Runnable {
 		this.sharedQueue = sharedQueue;
 	}
 
-	@Override
+	//@Override
 	public void run() {
 		for (int i = 0; i < 10; i++) {
 			try {
@@ -53,7 +53,7 @@ class Consumer implements Runnable {
 		this.sharedQueue = sharedQueue;
 	}
 
-	@Override
+	//@Override
 	public void run() {
 		while (true) {
 			try {

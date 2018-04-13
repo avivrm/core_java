@@ -2,7 +2,7 @@ package com.core.serialization;
 
 import java.io.Serializable;
 
-public class Serialization1 implements Serializable{
+public class Serialization1  {
 
 	private String name;
 	private int age;
@@ -11,6 +11,8 @@ public class Serialization1 implements Serializable{
 	// else it will throw java.io.NotSerializableException
 	private Address address;
 
+	Serialization1(){}
+	
 	Serialization1(String name, int age, Integer salary, Address address) {
 		this.name = name;
 		this.age = age;

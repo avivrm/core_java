@@ -84,7 +84,7 @@ public class MapSortingExample {
       
         Collections.sort(entries, new Comparator<Map.Entry<K,V>>() {
 
-            @Override
+            //@Override
             public int compare(Entry<K, V> o1, Entry<K, V> o2) {
                 return o1.getValue().compareTo(o2.getValue());
             }

@@ -20,18 +20,20 @@ public class MainSerialization {
 	public static void main(String... strings) throws IOException,
 			ClassNotFoundException {
 		Address address = new Address("address1", "address2", "address3");
-		Serialization2 s1 = new Serialization2("freeqw", 12, 1000);
+		Serialization1 s1 = new Serialization1("name", 1, 11, null);
+		Serialization2 s2 = new Serialization2("freeqw", 12, 1000);
 
-		FileOutputStream fout = new FileOutputStream("E:/f.txt", true);
+		FileOutputStream fout = new FileOutputStream("d:/f.txt", true);
 		ObjectOutputStream out = new ObjectOutputStream(fout);
 
-		out.writeObject(s1);
+		out.writeObject(s2);
 		out.flush();
 		System.out.println("success");
 
 		ObjectInputStream in = new ObjectInputStream(new FileInputStream(
-				"E:/f.txt"));
-		Serialization2 s = (Serialization2) in.readObject();
-		System.out.println("Serialization1: " + s);
+				"d:/f.txt"));
+		Serialization2 deserialize = (Serialization2) in.readObject();
+		System.out.println("Serialization: " + deserialize);
+		System.out.println("deserialize complete");
 	}
 }
