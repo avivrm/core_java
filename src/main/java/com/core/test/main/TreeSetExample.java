@@ -7,7 +7,7 @@ public class TreeSetExample {
 
 	public static void main(String... strings) {
 		Set<Book> tree = new TreeSet<Book>();
-		tree.add(null);
+		//tree.add(null);
 		tree.add(new Book("zhjg"));
 		tree.add(new Book("bgfg"));
 		tree.add(new Book("njgjh"));

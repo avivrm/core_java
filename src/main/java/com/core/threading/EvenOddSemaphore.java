@@ -1,4 +1,4 @@
-package com.core.test.main;
+package com.core.threading;
 
 import java.util.concurrent.Semaphore;
 

@@ -22,7 +22,12 @@
 			<artifactId>junit</artifactId>
 			<version>4.8.1</version>
 		</dependency>
-    </dependencies>
+		<dependency>
+			<groupId>io.reactivex</groupId>
+			<artifactId>rxjava</artifactId>
+			<version>1.1.0</version>
+		</dependency>
+	</dependencies>
     <build>
         <plugins>
             <plugin>
@@ -36,7 +41,7 @@
         </plugins>
     </build>
     <properties>
-    	<jdk.version>1.9</jdk.version>
+    	<jdk.version>11</jdk.version>
         <build.plugins.plugin.version>3.6.0</build.plugins.plugin.version>
     </properties>
 </project>
