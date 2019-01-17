@@ -4,8 +4,8 @@ public class IncerasingSubArray {
 
 	
 	public static void main(String... string){
-		int[] arr = new int[]{1,0,2,2,4};
-		System.out.println("Incearsing subarray are :"+countIncreasing(arr,5));
+		int[] arr = new int[]{1,0,2,2,4,1,2,3,4};
+		System.out.println("Incearsing subarray are :"+countIncreasing(arr,9));
 	}
 	
 	static int countIncreasing(int arr[], int n)

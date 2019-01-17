@@ -13,7 +13,7 @@ public class EveneOddThread {
 				synchronized (lock) {
 					for (int itr = 1; itr < 51; itr = itr + 2) {
 
-						System.out.print(" " + itr);
+						System.out.println(" A " + itr);
 						try {
 							lock.notify();
 							lock.wait();
@@ -28,7 +28,7 @@ public class EveneOddThread {
 			public synchronized void run() {
 				synchronized (lock) {
 					for (int itr = 2; itr < 51; itr = itr + 2) {
-						System.out.print(" " + itr);
+						System.out.println(" B " + itr);
 						try {
 							lock.notify();
 							if (itr == 50)
@@ -44,8 +44,8 @@ public class EveneOddThread {
 		try {
 			t1.start();
 			t2.start();
-			// t1.join();
-			// t2.join();
+			t1.join();
+			t2.join();
 			System.out.println("\nPrinting over\n");
 		} catch (Exception e) {
 
