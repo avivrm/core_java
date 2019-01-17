@@ -1,3 +1,5 @@
+Core Java::
+
 https://www.geeksforgeeks.org/10-important-interview-questions/
 
 https://www.geeksforgeeks.org/serialization-in-java/
@@ -10,4 +12,33 @@ https://dzone.com/articles/is-inheritance-dead
 
 https://stackoverflow.com/questions/1673841/examples-of-gof-design-patterns-in-javas-core-libraries
 
+
+
+
+
+Threading::
+
 http://www.obsidianscheduler.com/blog/tag/concurrency-2/
+
+https://www.javamadesoeasy.com/2015/03/threads-top-75-interview-questions-and_9.html
+
+https://javarevisited.blogspot.com/2018/07/java-multi-threading-interview-questions-answers-from-investment-banks.html
+
+https://www.javatpoint.com/reentrant-monitor-in-java
+
+https://www.tutorialspoint.com/java_concurrency/concurrency_fork_join.htm
+
+http://tutorials.jenkov.com/java-util-concurrent/executorservice.html
+
+http://www.vogella.com/tutorials/JavaConcurrency/article.html
+
+http://tutorials.jenkov.com/java-concurrency/index.html
+
+
+DB practicle questions ::
+
+http://www.java67.com/2013/04/10-frequently-asked-sql-query-interview-questions-answers-database.html
+
+https://codingsight.com/methods-to-rank-rows-in-sql-server-rownumber-rank-denserank-and-ntile/
+
+https://www.geeksforgeeks.org/indexing-in-databases-set-1/
