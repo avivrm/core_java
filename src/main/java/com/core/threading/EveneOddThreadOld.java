@@ -1,10 +1,10 @@
-package com.core.threading;
+package main.java.com.core.threading;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class EveneOddThread {
+public class EveneOddThreadOld {
 	static Object lock = new Object();
 
 	public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class EveneOddThread {
 						try {
 							lock.notify();
 							lock.wait();
-						} catch (InterruptedException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}
@@ -34,7 +34,7 @@ public class EveneOddThread {
 							if (itr == 50)
 								break;
 							lock.wait();
-						} catch (InterruptedException e) {
+						} catch (Exception e) {
 							e.printStackTrace();
 						}
 					}

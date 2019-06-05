@@ -1,9 +1,9 @@
-package com.core.threading;
+package main.java.com.core.threading;
 
 public class PrintWith3Thread {
 
-    static int nThreads = 3;
-    static int PRINT_NUMBERS_UPTO=90;
+    static int nThreads = 2;
+    static int PRINT_NUMBERS_UPTO=10;
 
     public static void main(String[] args) {
 
@@ -54,9 +54,9 @@ class PrintSequenceRunnable implements Runnable{
 
     @Override
     public void run() {
-        while (number < PrintWith3Thread.PRINT_NUMBERS_UPTO-1) {
+        while (number < PrintWith3Thread.PRINT_NUMBERS_UPTO) {
             synchronized (lock) {
-                while (number % PrintWith3Thread.nThreads != remainder) { // wait for numbers other than remainder
+                if (number % PrintWith3Thread.nThreads != remainder) { // wait for numbers other than remainder
                     try {
                         lock.wait();
                     } catch (InterruptedException e) {

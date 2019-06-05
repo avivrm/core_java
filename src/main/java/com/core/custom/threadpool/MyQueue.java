@@ -1,9 +1,9 @@
-package com.core.custom.threadpool;
+package main.java.com.core.custom.threadpool;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class MyQueue<E> implements CustomQueue<E> {
+public class MyQueue<E> implements main.java.com.core.custom.threadpool.CustomQueue<E> {
 
 	private Queue<E> queue = new LinkedList<E>();
 

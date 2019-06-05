@@ -1,4 +1,4 @@
-package com.core.custom.threadpool;
+package main.java.com.core.custom.threadpool;
 
 public interface CustomQueue<E> {
 

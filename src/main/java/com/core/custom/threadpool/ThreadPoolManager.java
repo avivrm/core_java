@@ -1,4 +1,6 @@
-package com.core.custom.threadpool;
+package main.java.com.core.custom.threadpool;
+
+import main.java.com.core.custom.threadpool.MyQueue;
 
 public class ThreadPoolManager {
 

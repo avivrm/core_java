@@ -1,4 +1,4 @@
-package com.core.LRU;
+package main.java.com.core.LRU;
 
 public class Node {
 

@@ -1,9 +1,9 @@
-package com.core.custom.threadpool;
+package main.java.com.core.custom.threadpool;
 
 public class TestThreadPoolManager {
 
 	 public static void main(String[] args) {
-	        ThreadPoolManager poolManager = new ThreadPoolManager(10);
+	        main.java.com.core.custom.threadpool.ThreadPoolManager poolManager = new main.java.com.core.custom.threadpool.ThreadPoolManager(10);
 	         
 	        //now lets submit task
 	        poolManager.submitTask(new Runnable() {

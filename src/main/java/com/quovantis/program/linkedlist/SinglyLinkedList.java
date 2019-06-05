@@ -1,4 +1,5 @@
-package com.quovantis.program.linkedlist;
+package main.java.com.quovantis.program.linkedlist;
+
 
 import java.util.Scanner;
 
